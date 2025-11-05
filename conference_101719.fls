@@ -1,6 +1,6 @@
-PWD c:\Users\Anek\Desktop\Paper
+PWD c:\Users\Anek\Desktop\690b97b9dcd97edf96776add
 INPUT C:\Users\Anek\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\Anek\Desktop\Paper\conference_101719.tex
+INPUT c:\Users\Anek\Desktop\690b97b9dcd97edf96776add\conference_101719.tex
 OUTPUT conference_101719.log
 INPUT .\IEEEtran.cls
 INPUT IEEEtran.cls
