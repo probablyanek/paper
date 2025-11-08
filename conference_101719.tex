@@ -65,136 +65,61 @@ component, formatting, style, styling, insert
 
 \section{List of Figures}
 \section{Introduction}
+In developing countries like India, natural disasters pose a way bigger problem compared to other countries. This is due to the systemic and catastrophic failure of the centralized communication infrastructure. This has been a recurrent issue, in Orissa Super Cyclone (1999), the Bhuj Earthquake (2001) and the Kerala Floods (2018). The underlying problem is not just the disaster but also the centralized highly interdependent nature of network infrastructure, if power grid or the cell tower or internet fiber poles is damaged, the system goes down. Hence, there are multiple points of complete failure. 
+
+This failure is mostly predictable when a disaster strikes. It cuts off the very needed communication channel between the citizens and the authorities, causing more casualties during these tumultuous times. Hence, there is a need for decentralized infrastructure-independent architecture which allows a hierarchical mode of communication between the authorities and citizens, allowing the authority to broadcast information like aid and food available at a nearby location and receive messages from citizens, like road-blocking or building collapse.  
+
+Here we discuss such a system architecture built upon much foundational research, but building upon their gaps. This makes it robust, redundant, delay tolerant and relatively inexpensive, allowing easier and cheap dissemination of the citizen units. 
+
+It made using hobbyist grade hardware for citizen units and for authorities’ side, we have an omni-directional antenna with higher power for bigger range.  
+
+The mesh algorithm provides a highly redundant, store and forward network with confidentiality and authenticity preserved during communication. 
 \section{Literature Survey}
 \section{Methodology}
-\subsection{System Architecture and Design}
-We will explain the architecture of the two parts of
-this system, the civilian node and the base station
-node. Both are microcontrollers, in this case an
-ESP32-WROOM-32 attached with an OLED
-Display, ssd1306 with power supply and a LoRa
-module, RA02, fitted with an antenna.
-The difference lies in the kind of antenna they use
-and how the power is supplied. The civilian node is
-meant to be a portable unit, a civilian carry this and
-utilizes it in disaster to communicate with
-authorities, it utilizes a simple dipole antenna for
-transmitting and receiving. It’s connected by 18650
-lithium battery for power.
-Meanwhile, the base station node is supposed to
-have high power stationed at disaster management
-authorities’ location, like DEOC (District
-Emergency Operation Centre), which will broadcast
-and receive all the disaster related communication,
-hence its main-powered and for more range it fitted
-with quadrifilar helical antenna.
-We have chosen the 433 MHz frequency as this
-frequency is delicenced for low power devices for
-the purpose of medical and scientific uses. Our input
-power is below 15 dBm, making this viable for our
-need.
-\subsection{Design of Antenna and its Fabrication}
-The quadrifilar antenna is used here for its circular
-polarization and hemispherical radiation pattern.
-We utilized John Coppens’ well-reputed QFH
-calculator for designing the dimensions of the
-antenna, which is based on prior foundational work
-in QFH antenna, like the design shown by George
-Goodroe (KF4CPJ) [x].
-The resulting dimensions are shown in figure[x].
-There are two orthogonal loops involved, one longer
-than the other, for achieving circular polarization.
-This removed the need for ground/reflector for back-
-reflection to increase the directivity.
-The calculator utilized formulae and look up table
-from the existing literature. [insert formulae and
-lookup table, some, put rest in appendix].
-Initial antenna dimensions were then simulated in
-the software CST Studio and the S11 graph checked
-to verify the resonance at correct frequency and the
-radiation pattern. But, that size was too large for our
-testing purposes so utilised a capacitive loading
-method using, dielectric in our case, PLA
-scaffolding that holds the antenna but also adds
-capacitance shifting the resonance to lower
-frequency giving us leeway to shrink the coil length
-to get back to correct resonant frequency. This is
-verified by parametric analysis after adding PLA
-scaffolding.
-After verification of simulation, the scaffolding is 3d
-print in PLA and copper plumbing tubes of 4mm
-diameter are wound around it in the grooves. The
-antenna structure is connected by a Choke Balun for
-proper power division to increase common-mode
-impedance (more than 1k $\Omega$ at 433 MHz) and to
-isolate the feedlines, this is placed on vertical
-support near the feed point. For meeting the
-standards, the input impedance is kept at 50 $\Omega$.
-\subsection{Network Protocol and Software Implementation}
-The code for the system was developed in C++
-coding language for its objected oriented paradigm
-needed for the libraries for we used which included
-‘RadioLib’ for LoRa handling and ‘Crypto’ for
-encryption. The code is derived from the open-
-source repository for mesh based off-grid LoRa
-communication, ‘Meshtastic’, but since the project
-doesn’t support the cheap available, ESP32-
-WROOM-32, changes were made to many parts of
-the code. We used PlatformIO IDE to deploy the
-code. This software stack helped in creating node-
-to-app communication and the mesh protocol.
-The application interface managed the connection
-from microcontroller to phone using Bluetooth
-Low Energy (BLE) and conversion of user
-messages and mobile GPS data to and from packets
-in LoRa.
-The transmitted packet contains packet structure,
-structural information about the packet like
-Destination, Source and Packet ID along with a
-Time-to-Live counter which counts hops left to
-limit packet propagation and the encrypted data.
-For Channel access, we use Carrier-Sense Multiple
-Access with Collision Avoidance protocol, so
-before sending any packets, a node checks the
-RSSI to all the nearby nodes and only sends the
-packet to the one with least RSSI, based on the
-intuition that RSSI is inversely proportional to
-traffic by corresponding node.
-Along with this procedure, for routing, a flooding-
-based algorithm is performed, but to prevent the
-storming issue involved in normal flooding, there is
-random, short backoff period each node has to
-adhere to before reading a received packet, if the
-same packet is received again, that packet gets
-dropped.
-The encryption used for securing the message is
-AES-GCM to also achieve integrity and
-authenticity along with confidentiality as GCM
-adds the authentication tag which proves lack of
-alteration while transmission. This especially helps
-when dealing with decentralized ad-hoc networks
-like this one.
-\subsection{Validation and Testing}
-A multi-stage testing plan was executed to validate
-the performance of the individual components and
-the network. The QFH antenna was tested using
-VNA to verify its S11 (Return Loss) and thereby
-VSWR to verify its working at correct frequency.
-For range testing, we needed to judge the range at
-lower input power than actually used value to
-understand the propagation relative to power. This
-is required to test the mesh algorithm, otherwise,
-each node needs to be placed at different parts of
-city to show the full extent which was not possible
-in the scope of this project. However, the full extent
-was able to be understood using the simulation
-which took in antenna height and power and gave
-the range.
-By putting the nodes just at the border of each
-other, mesh nature of the network, via intermediate
-relaying, is able to be visualized (A – B – C
-structure).
+\subsection{System Architecture and Design} 
+
+We will explain the architecture of the two parts of this system, the civilian node and the base station node. Both are microcontrollers, in this case an ESP32-WROOM-32 attached with an OLED Display, ssd1306 with power supply and a LoRa module, RA02, fitted with an antenna.  
+
+The difference lies in the kind of antenna they use and how the power is supplied. The civilian node is meant to be a portable unit, a civilian carry this and utilizes it in disaster to communicate with authorities, it utilizes a simple commercially available dipole antenna for transmitting and receiving. It’s connected by 18650 lithium battery for power. 
+
+Meanwhile, the base station node is supposed to have high power stationed at disaster management authorities’ location, like DEOC (District Emergency Operation Centre), which will broadcast and receive all the disaster related communication, hence its main-powered and for more range it fitted with quadrifilar helical antenna. 
+
+We have chosen the 433 MHz frequency as this frequency is delicenced for low power devices for the purpose of medical and scientific uses. Our input power is below 15 dBm, making this viable for our need. 
+
+\subsection{Design of Antenna and its Fabrication} 
+The quadrifilar antenna is used here for its circular polarization and hemispherical radiation pattern. We utilized John Coppens’ well-reputed QFH calculator for designing the dimensions of the antenna, which is based on prior foundational work in QFH antenna, like the design shown by George Goodroe (KF4CPJ) [x].  
+
+The resulting dimensions are shown in figure[x]. There are two orthogonal loops involved, one longer than the other, for achieving circular polarization. This removed the need for ground/reflector for back-reflection to increase the directivity. 
+
+The calculator utilized formulae and look up table from the existing literature. [insert formulae and lookup table, some, put rest in appendix].  
+
+Initial antenna dimensions were then simulated in the software CST Studio and the S11 graph checked to verify the resonance at correct frequency and the radiation pattern. But that size was too large for our testing purposes so utilised a capacitive loading method using, dielectric in our case, PLA scaffolding that holds the antenna but also adds capacitance shifting the resonance to lower frequency giving us leeway to shrink the coil length to get back to correct resonant frequency. This is verified by parametric analysis after adding PLA scaffolding. 
+
+After verification of simulation, the scaffolding is 3d print in PLA and copper plumbing tubes of 4mm diameter are wound around it in the grooves. The antenna structure is connected by a Choke Balun for proper power division to increase common-mode impedance (more than 1k $\Omega$ at 433 MHz) and to isolate the feedlines, this is placed on vertical support near the feed point. For meeting the standards, the input impedance is kept at 50 $\Omega$. 
+
+\subsection{Network Protocol and Software Implementation} 
+The code for the system was developed in C++ coding language for its objected oriented paradigm needed for the libraries for we used which included ‘RadioLib’ for LoRa handling and ‘Crypto’ for encryption. The code is derived from the open-source repository for mesh based off-grid LoRa communication, ‘Meshtastic’, but since the project doesn’t support the cheap available, ESP32-WROOM-32, changes were made to many parts of the code. We used PlatformIO IDE to deploy the code. This software stack helped in creating node-to-app communication and the mesh protocol. 
+
+The application interface managed the connection from microcontroller to phone using Bluetooth Low Energy (BLE) and conversion of user messages and mobile GPS data to and from packets in LoRa. 
+
+The transmitted packet contains packet structure, structural information about the packet like Destination, Source and Packet ID along with a Time-to-Live counter which counts hops left to limit packet propagation and the encrypted data. 
+
+For Channel access, we use Carrier-Sense Multiple Access with Collision Avoidance protocol, so before sending any packets, each node performs Channel Activity Detection (CAD). If it detects that channel is busy, it will wait for a random backoff window, with a SNR based varying contention window (CW). 
+
+Along with this procedure, for routing, a flooding-based algorithm is performed, but to prevent the storming issue involved in normal flooding, there is random, short backoff period each node has to adhere to before reading a received packet, if the same packet is received again, that packet gets dropped. 
+
+The encryption used for securing the message is AES-GCM to also achieve integrity and authenticity along with confidentiality as GCM adds the authentication tag which proves lack of alteration while transmission. This especially helps when dealing with decentralized ad-hoc networks like this one. 
+
+\subsection{Validation and Testing} 
+A multi-stage testing plan was executed to validate the performance of the individual components and the network. The QFH antenna was tested using VNA to verify its S11 (Return Loss) and thereby VSWR to verify its working at correct frequency. 
+
+For range testing, we needed to judge the range at lower input power than actually used value to understand the propagation relative to power. This is required to test the mesh algorithm, otherwise, each node needs to be placed at different parts of city to show the full extent which was not possible in the scope of this project. However, the full extent was able to be understood using the simulation which took in antenna height and power and gave the range. 
+
+By putting the nodes just at the border of each other, mesh nature of the network, via intermediate relaying, can be visualized (A – B – C structure).
 \section{Results and Discussions}
+Performance of Quadrifilar Helical Antenna 
+
+We will explain the architecture of the two parts of
 \section{Standards}
 \section{Conclusion and Future Scope}
 \section{Appendix}
