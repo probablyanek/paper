@@ -153,9 +153,9 @@ By putting the nodes just at the border of each other, mesh nature of the networ
 
 %% FIGURE 8: The dimensions obtained for 443 MHz Resonance
 
-%% FIGURE 9: S11 parameter of the simulation of QFH antenna
+%% FIGURE 9: S11 parameter of the simulation of QFH antenna (consists of 9_1 and 9_2 lined up horizontally)
 
-%% FIGURE 10: S11 parameter of the simulation of QFH antenna with PLA scaffolding
+%% FIGURE 10: S11 parameter of the simulation of QFH antenna with PLA scaffolding (consists of 10_1 and 10_2 lined up horizontally)
 
 The QFH antenna for the Tier 2 Base Station is modelled and fine-tuned in CST Studio Suite. The objective was to achieve resonance at 433 MHz which for which dimensions were found using calculator, shown in Figure 8. First the antenna alone was simulated in Figure 9 to get a reference point on its S11 behaviour. Then PLA structure was added for another run (seen in Figure 10), revealing a definite move in resonance. 
 
@@ -216,6 +216,102 @@ The chief limitation of this work is found in its use of simulation-based verifi
 In this work, theoretical validation of the theoretical design for a low cost two-tier emergency communication system was successfully designed and validated. The concept of the design could be legalized and economically applied to India by the chosen system concept of a structure employing LoRa, mesh protocol and the license-free 433 MHz band. The simulation results showed the good theoretical performance of a home-built QFH antenna with ideal performance of S11 = -21.25 dB with hemispherical radiation patterns. The implementation of the Tier 1 Civilian Node and its corresponding core network software for the solution was also successful in demonstrating its functionality with the Meshtastic platform. 
 
 The thrust of this work is theoretical validation, the immediate priority for future work will be the transition from simulation to a physically robust prototype. This will necessitate the re-fabrication of the QFH antenna with precise assembly strategies in mind to ameliorate the fabrication issues which exist within the prototype and which caused the resonance to shift centres in the first prototype. Once this antenna design has been fabricated it can be manufactured is a practical way with its validation using a VNA for this design for its resonant frequency at 433 MHz. Once validated the potential will then be explored by way of extensive testing in real world scenarios to measure the range of the QFH equipped Base Station against the original antenna-equipped Civilian Nodes with a goal to quantify the true performance of the system. 
+
+\appendices
+\section{Lookup Tables for Compensation Factors}
+
+Finite conductor diameter alters the electrical length of the helix.
+Empirical compensation factors ($\Delta$L and $\Delta$F) are interpolated from standard QFH reference data (ON7EQ, NOAA QFH models, and empirical build data).
+
+\begin{table}[h!]
+\centering
+\caption{Lookup Table for Compensation Factors (Part 1)}
+\label{tab:compensation1}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+\textbf{Conductor Diameter (mm)} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} \\
+\hline
+\textbf{$\Delta$L} (Length correction factor) & 1.045 & 1.053 & 1.060 & 1.064 & 1.068 & 1.070 \\
+\hline
+\textbf{$\Delta$F} (Frequency correction factor) & 1.013 & 1.014 & 1.015 & 1.016 & 1.017 & 1.018 \\
+\hline
+\end{tabular}%
+}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Lookup Table for Compensation Factors (Part 2)}
+\label{tab:compensation2}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{Conductor Diameter (mm)} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} & \textbf{11} \\
+\hline
+\textbf{$\Delta$L} (Length correction factor) & 1.070 & 1.071 & 1.071 & 1.070 & 1.070 \\
+\hline
+\textbf{$\Delta$F} (Frequency correction factor) & 1.020 & 1.022 & 1.025 & 1.027 & 1.030 \\
+\hline
+\end{tabular}%
+}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Lookup Table for Compensation Factors (Part 3)}
+\label{tab:compensation3}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{Conductor Diameter (mm)} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} \\
+\hline
+\textbf{$\Delta$L} (Length correction factor) & 1.070 & 1.070 & 1.069 & 1.069 & 1.068 \\
+\hline
+\textbf{$\Delta$F} (Frequency correction factor) & 1.033 & 1.036 & 1.041 & 1.044 & 1.049 \\
+\hline
+\end{tabular}%
+}
+\end{table}
+
+\subsection*{Fundamental Equations}
+
+\subsubsection*{(a) General parameters}
+\begin{equation}
+\text{Wavelength: } \lambda = \frac{300,000}{f}
+\end{equation}
+\begin{equation}
+\text{Compensated wavelength: } \lambda_c = \lambda \times \Delta L(wdiam)
+\end{equation}
+\begin{equation}
+\text{Bending correction: } b_{corr} = 2w_{rad} - \frac{\pi w_{rad}}{2}
+\end{equation}
+
+\subsubsection*{(b) Larger loop}
+\begin{equation}
+\begin{aligned}
+\text{Total length: } &L_1 = \lambda_c \times 1.026 \\
+\text{Compensated total length: } &L_{1c} = L_1 + 4b_{corr} \\
+\text{Horizontal separator: } &R_1 = \frac{0.5L_{1c}}{1 + \sqrt{\frac{1}{\text{ratio}^2} + (\pi \cdot \text{turns})^2}} \\
+\text{Vertical separator: } &V_1 = \frac{L_{1c} - 2R_1}{2} \\
+\text{Antenna height: } &H_1 = \frac{R_1}{\text{ratio}} \\
+\text{Internal diameter: } &D_{i1} = R_1 - w_{diam} \\
+\text{Compensated values: } &R_{1c} = R_1 - 2w_{rad}, \quad V_{1c} = V_1 - 2w_{rad}
+\end{aligned}
+\end{equation}
+
+\subsubsection*{(c) Smaller loop}
+\begin{equation}
+\begin{aligned}
+\text{Total length: } &L_2 = \lambda_c \times 0.975 \\
+\text{Compensated total length: } &L_{2c} = L_2 + 4b_{corr} \\
+\text{Horizontal separator: } &R_2 = \frac{0.5L_{2c}}{1 + \sqrt{\frac{1}{\text{ratio}^2} + (\pi \cdot \text{turns})^2}} \\
+\text{Vertical separator: } &V_2 = \frac{L_{2c} - 2R_2}{2} \\
+\text{Antenna height: } &H_2 = \frac{R_2}{\text{ratio}} \\
+\text{Internal diameter: } &D_{i2} = R_2 - w_{diam} \\
+\text{Compensated values: } &R_{2c} = R_2 - 2w_{rad}, \quad V_{2c} = V_2 - 2w_{rad}
+\end{aligned}
+\end{equation}
 
 \begin{thebibliography}{00}
 \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
