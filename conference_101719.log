@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.5)  9 NOV 2025 00:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.5)  9 NOV 2025 17:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -290,6 +290,17 @@ LaTeX Font Info:    Calculating math sizes for size <11> on input line 57.
 ]
 
 
+
+[2]
+
+
+
+[3]
+
+
+
+[4]
+
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
 
@@ -302,24 +313,28 @@ Before submitting the final camera ready copy, remember to:
 
 
 
-[2] (conference_101719.aux)
+
+
+[5
+
+] (conference_101719.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-10-09>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4199 strings out of 468080
- 66166 string characters out of 5426256
- 483961 words of memory out of 5000000
- 32834 multiletter control sequences out of 15000+600000
+ 4200 strings out of 468080
+ 66174 string characters out of 5426256
+ 486211 words of memory out of 5000000
+ 32835 multiletter control sequences out of 15000+600000
  667892 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,11n,65p,695b,306s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,11n,65p,2123b,306s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (2 pages, 73230 bytes).
+Output written on conference_101719.pdf (5 pages, 87392 bytes).
 PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
+ 44 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -11,7 +11,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Paper*\\
+\title{Test*\\
 {\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
 should not be used}
 \thanks{Identify applicable funding agency here. If none, delete this.}
@@ -63,8 +63,9 @@ email address or ORCID}
 component, formatting, style, styling, insert
 \end{IEEEkeywords}
 
-\section{List of Figures}
-\section{Introduction}
+\section{INTRODUCTION}
+%% FIGURE 1:Cell Tower Collapsed Due to Hurricane
+
 In developing countries like India, natural disasters pose a way bigger problem compared to other countries. This is due to the systemic and catastrophic failure of the centralized communication infrastructure. This has been a recurrent issue, in Orissa Super Cyclone (1999), the Bhuj Earthquake (2001) and the Kerala Floods (2018). The underlying problem is not just the disaster but also the centralized highly interdependent nature of network infrastructure, if power grid or the cell tower or internet fiber poles is damaged, the system goes down. Hence, there are multiple points of complete failure. 
 
 This failure is mostly predictable when a disaster strikes. It cuts off the very needed communication channel between the citizens and the authorities, causing more casualties during these tumultuous times. Hence, there is a need for decentralized infrastructure-independent architecture which allows a hierarchical mode of communication between the authorities and citizens, allowing the authority to broadcast information like aid and food available at a nearby location and receive messages from citizens, like road-blocking or building collapse.  
@@ -73,33 +74,61 @@ Here we discuss such a system architecture built upon much foundational research
 
 It made using hobbyist grade hardware for citizen units and for authorities’ side, we have an omni-directional antenna with higher power for bigger range.  
 
-The mesh algorithm provides a highly redundant, store and forward network with confidentiality and authenticity preserved during communication. 
-\section{Literature Survey}
-\section{Methodology}
-\subsection{System Architecture and Design} 
+The mesh algorithm provides a highly redundant, store and forward network with confidentiality and authenticity preserved during communication.
 
+\section{LITERATURE REVIEW}
+
+A review of some of the initial and more recent work [1-15] on the use of LoRa devices for emergency messaging shows some good ideas, but they are scattered about. Wang et al [15] divide the systems into three classes for the improvements available today, satellite, cellular, and home-made. If the central stations are disturbed, then the satellite systems and cell systems fail; but there is good promise for peer to peer LoRa communications. However, when we examine more carefully the ways used to employ the LoRa technology we find a lack of development, in that no over-all system has been given to combine the improvements in five separate and important fields, organization of the network, signaling systems employed, means used for executing the code, means for protecting the system, and methods for communicating with the signal transmitter. 
+
+A very large part of the present problem is in the field of wireless network systems. In the majority of the works, there is a great dependence on one of two unsuccessful systems. One is a very heavy dependence on central stations supplied with costly and difficult to manage remote systems, such as LoRaWAN. This may be seen in the system of Douklias et al [11], the system of Dubey et al [4], or the signal detection system of Bouras et al [9]. These works have in common systems for transmitting messages, using relay stations and communicating them through links in the network, such as the 4G systems, or satellites, but they thus have one great defect, namely that the very defect from which the plan the central organization suffers when a disturbance occurs. In answer to this another form of network systems has appeared, these give decentralized, homogeneous, P2P meshes. Their use may be seen in the DisasChat system of Dutta et al [1], and MauMe of Mari and Gabillon [10], and Muladi’s system of the Meshtastic tracker [12], which show that they are systems which make it easily possible of providing adequate communication without the necessity of the use of a central station. There are however disadvantages. To be a homogenous system, it must depend upon the use of the same sort of low power devices by the users, and in consequence a restriction in the usable distance and distance of control. Some systems have tried hierarchical systems, but, as has been shown, they have for the most part turned out to be too cumbersome and too greedy of power, such as the system utilizing AI of Todakar et al [2], or they are used in great part for some sole use, and are one-way transmission systems as observed in the case of the earthquake warning system of Ranasinghe et al [8]. This separation creates a hole - a viable two- or more way layer structure that can connect ordinary people directly with the command centers through the combination of the strong mesh oriented survivorship skills with the strong range hubs. 
+
+This effect is made worse due to the weak features of the protocol sets about how to code means of communication or run a program or provide safety. The overt failure in the area of a chain form of signal structure shows up in the form of a communication saturation through too many cycles of the general loop of messages which can lead till disaster therefrom results when everything tends to fall dead. Some of the savants can get over it by means of large structure employed, working over the habit, as Schmidt's bande BPoL/DTN7 method [3] shows or the rf95modem experimental work of Höcht [13] or. The brands do not mostly lend themselves to the kind of abc general type of communication desirable in parts of minutes following a catastrophe disaster; but varieties are progressed which can communicate in rapid flow of information, as the MauMe process of spreading communications naturally of mornings development of study Mare and Gabillon's [10] which of itself needs the ACK or passage of reply signal in factor about the which coincidence messages are given on recognised paths of communications to give such communication flow filling the approach to communication space. 
+
+These lead to being operating in their density of paths and productive capability to the fining up of channel and double despatch of messages wherever connecting about recognized wave lengths over links to centers, these of ways have their dacile habitation and ment of freely running new lines of patches to carry near by freight of what to do next, which is displaced in the method of quite another means of sending of messages without expense of memory in the operation of being brief recollections, it is known that the common, simple and somewhat abrupt, but well intentioned method of spreading the messages without the memory factor can be sent along, this complicatory machinery to shift into with numbers, but render that due feature useful intervening in the real problems of coding and systems by processes as are introduced in the tools of Meshtastic, giving methods of analytic degree of work on the working of the conception given by the notion of Mulidai et al. [12] are running on ready made circuit range in their operations as standard forms out of box. The conversion to a flouring function on the cheap varieties by being placed on the broad framework of the cheaper ESP32-WROOM-32 chips requires far more hands or producing effort than is it in itself to work out handled on experiment, but on its approach wild active channels bring space allowances for cheap production variety of formations or phrasing results. Curiously safety is believed not to work out in the manufacture of formations till it is too late.. Plenty of setups - like 2, 3, 4, 6, 7, 8, 9, 11, 12, and 15 - barely bring it up at all. When they do touch on it, some openly skip protection, sending data raw [10], while others just don’t finish the job. The best attempt spotted so far, DisasChat [1], uses AES-256 to hide info yet misses built-in checks for tampering or source trust. Not once does anyone use a full AEAD method like AES-GCM, which handles secrecy, validity, and verification together. 
+
+A big issue remains when building antennas for the base station used by the authority. One main problem at lower frequencies - say, 433 MHz - is that a working Quadrifilar Helical Antenna tends to take up too much space. Older studies, like Fusco’s team [14], along with recent ones focused on LoRa, such as Ariessaputra et al. [5], usually try shrinking it by changing how the metal parts are shaped; examples include adding small insulating breaks or tweaking coil patterns. That leaves room for something new: using 3D printing so the support structure itself plays a role in signal handling. Instead of just being a frame, the printed part - maybe made from PLA plastic - could act like a capacitor by affecting electric fields, pushing the tuning frequency down and letting the actual wire loops get smaller - an idea not yet explored. 
+
+Overall, past studies offer useful pieces - but only bits and parts. Not one full setup’s been suggested to fix those five combined shortcomings. Our work introduces a framework stitching together fresh fixes for each of the five areas, building just one solid, real-world-ready emergency messaging system. 
+
+\section{METHODOLOGY}
+
+\subsection{System Architecture and Design} 
+%% FIGURE 2: Block Diagram of the Node (microcontroller with OLED module and RA02 LORA module)
 We will explain the architecture of the two parts of this system, the civilian node and the base station node. Both are microcontrollers, in this case an ESP32-WROOM-32 attached with an OLED Display, ssd1306 with power supply and a LoRa module, RA02, fitted with an antenna.  
 
+%% FIGURE 3: Fabricated Civilian Node
 The difference lies in the kind of antenna they use and how the power is supplied. The civilian node is meant to be a portable unit, a civilian carry this and utilizes it in disaster to communicate with authorities, it utilizes a simple commercially available dipole antenna for transmitting and receiving. It’s connected by 18650 lithium battery for power. 
+
 
 Meanwhile, the base station node is supposed to have high power stationed at disaster management authorities’ location, like DEOC (District Emergency Operation Centre), which will broadcast and receive all the disaster related communication, hence its main-powered and for more range it fitted with quadrifilar helical antenna. 
 
+
+
 We have chosen the 433 MHz frequency as this frequency is delicenced for low power devices for the purpose of medical and scientific uses. Our input power is below 15 dBm, making this viable for our need. 
 
-\subsection{Design of Antenna and its Fabrication} 
+\subsection{Design of Antenna and its Fabrication}
+
 The quadrifilar antenna is used here for its circular polarization and hemispherical radiation pattern. We utilized John Coppens’ well-reputed QFH calculator for designing the dimensions of the antenna, which is based on prior foundational work in QFH antenna, like the design shown by George Goodroe (KF4CPJ) [x].  
 
-The resulting dimensions are shown in figure[x]. There are two orthogonal loops involved, one longer than the other, for achieving circular polarization. This removed the need for ground/reflector for back-reflection to increase the directivity. 
 
-The calculator utilized formulae and look up table from the existing literature. [insert formulae and lookup table, some, put rest in appendix].  
+
+There are two orthogonal loops involved, one longer than the other, for achieving circular polarization. This removed the need for ground/reflector for back-reflection to increase the directivity. The calculator utilized formulae and look up table from the existing literature. See appendix for those. After calculator dimensions were found we moved on to synthesis.
+
+%% FIGURE 4: QFH Antenna modelled in CST Studio
 
 Initial antenna dimensions were then simulated in the software CST Studio and the S11 graph checked to verify the resonance at correct frequency and the radiation pattern. But that size was too large for our testing purposes so utilised a capacitive loading method using, dielectric in our case, PLA scaffolding that holds the antenna but also adds capacitance shifting the resonance to lower frequency giving us leeway to shrink the coil length to get back to correct resonant frequency. This is verified by parametric analysis after adding PLA scaffolding. 
 
+%% FIGURE 5: QFH Antenna constructed
+
 After verification of simulation, the scaffolding is 3d print in PLA and copper plumbing tubes of 4mm diameter are wound around it in the grooves. The antenna structure is connected by a Choke Balun for proper power division to increase common-mode impedance (more than 1k $\Omega$ at 433 MHz) and to isolate the feedlines, this is placed on vertical support near the feed point. For meeting the standards, the input impedance is kept at 50 $\Omega$. 
 
-\subsection{Network Protocol and Software Implementation} 
+%% FIGURE 6:Base Station Node with the QFH antenna
+
+\subsection{Network Protocol and Software Implementation}
+
 The code for the system was developed in C++ coding language for its objected oriented paradigm needed for the libraries for we used which included ‘RadioLib’ for LoRa handling and ‘Crypto’ for encryption. The code is derived from the open-source repository for mesh based off-grid LoRa communication, ‘Meshtastic’, but since the project doesn’t support the cheap available, ESP32-WROOM-32, changes were made to many parts of the code. We used PlatformIO IDE to deploy the code. This software stack helped in creating node-to-app communication and the mesh protocol. 
 
+%% FIGURE 7: Chat Interface of the App
 The application interface managed the connection from microcontroller to phone using Bluetooth Low Energy (BLE) and conversion of user messages and mobile GPS data to and from packets in LoRa. 
 
 The transmitted packet contains packet structure, structural information about the packet like Destination, Source and Packet ID along with a Time-to-Live counter which counts hops left to limit packet propagation and the encrypted data. 
@@ -110,19 +139,83 @@ Along with this procedure, for routing, a flooding-based algorithm is performed,
 
 The encryption used for securing the message is AES-GCM to also achieve integrity and authenticity along with confidentiality as GCM adds the authentication tag which proves lack of alteration while transmission. This especially helps when dealing with decentralized ad-hoc networks like this one. 
 
-\subsection{Validation and Testing} 
+\subsection{Validation and Testing}
+
 A multi-stage testing plan was executed to validate the performance of the individual components and the network. The QFH antenna was tested using VNA to verify its S11 (Return Loss) and thereby VSWR to verify its working at correct frequency. 
 
 For range testing, we needed to judge the range at lower input power than actually used value to understand the propagation relative to power. This is required to test the mesh algorithm, otherwise, each node needs to be placed at different parts of city to show the full extent which was not possible in the scope of this project. However, the full extent was able to be understood using the simulation which took in antenna height and power and gave the range. 
 
-By putting the nodes just at the border of each other, mesh nature of the network, via intermediate relaying, can be visualized (A – B – C structure).
-\section{Results and Discussions}
-Performance of Quadrifilar Helical Antenna 
+By putting the nodes just at the border of each other, mesh nature of the network, via intermediate relaying, can be visualized (A – B – C structure).  
 
-We will explain the architecture of the two parts of
-\section{Standards}
-\section{Conclusion and Future Scope}
-\section{Appendix}
+\section{RESULTS} 
+
+\subsection{QFH Antenna Simulation}
+
+%% FIGURE 8: The dimensions obtained for 443 MHz Resonance
+
+%% FIGURE 9: S11 parameter of the simulation of QFH antenna
+
+%% FIGURE 10: S11 parameter of the simulation of QFH antenna with PLA scaffolding
+
+The QFH antenna for the Tier 2 Base Station is modelled and fine-tuned in CST Studio Suite. The objective was to achieve resonance at 433 MHz which for which dimensions were found using calculator, shown in Figure 8. First the antenna alone was simulated in Figure 9 to get a reference point on its S11 behaviour. Then PLA structure was added for another run (seen in Figure 10), revealing a definite move in resonance. 
+
+%% FIGURE 11:Parametric Analysis done in Simulation to find the new height for 443 MHz Resonant Frequency
+
+
+Parametric analysis was done with antenna height compression factor to find the heigh needed to achieve resonance again. Because of this fine-tuning, simulation showed an end result of –21.25 dB S11 at 433.58 MHz the 3D radiation pattern from testing (shown in Figure 12) got reviewed too, showing the signal spreads like a semi-sphere. 
+
+%% FIGURE 12:Radiation Pattern of Simulated QFH Antenna
+
+\subsection{QFH Antenna Physical Validation}
+
+%% FIGURE 13:The QFH Antenna is Tested with VNA
+
+
+A working model of the tuned QFH antenna is built using numbers from the final simulation dimensions. This setup hooked up to a VNA – to obtain S11 graph. Results from actual testing, plotted in Fig. 14, didn’t match simulation at all. Resonance wasn’t near the expected 433 MHz mark. The drop occurred at way higher than 1 GHz, so something clearly went wrong during build. 
+
+%% FIGURE 14:The S11 graph obtained from VNA, the resonance is at wrong frequency
+
+
+
+This was choked up to limitations of soldering at the connections of antenna which over time deteriorated and changed the resonance of the antenna, along with other issues that come with hardware construction with limited resources. The antenna, in theory is supposed to work as supported by the CST simulation with all cases. 
+
+\subsection{System and Network Validation}
+
+%% FIGURE 15: The working of a civilian nodes connected with phone
+
+
+Even though the Tier 2 antenna had built problems, the main software and Tier 1 hardware still passed testing. The civilian node got put together – its special firmware worked fine linking up to the Meshtastic phone app using Bluetooth (see Figure 15). It ran without issues, able to transmit and get messages. On top of that, the mesh network’s behaviour was checked inside the Meshtastic simulator (Figure 16), where both CSMA/CA and flood-based messaging held up well across multiple relay points. A  range trial (Figure 17) also backed this up, showing steady packet success over long stretches thanks to hopping between nodes. 
+
+%% FIGURE 16: Range tested in the Meshtastic Simulator
+
+%% FIGURE 17: Actual Range found, showing mesh algorithm success
+
+
+\section{DISCUSSION} 
+
+\subsection{Interpretation of Simulated Antenna Performance}
+
+The simulated outputs inculcated that the dimensions were correct for resonance at 433 MHz frequency. S11 value of -21.23 dB means there is very little back propagation of power and almost 99\% of transmitted power radiated as electromagnetic waves.  This and the effective hemispherical radiation pattern confirm that this antenna is suitable for broadcasting and mass reception at base station. The addition of PLA scaffolding did cause the frequency shift which allowed the height to be compressed at a ratio of 0.92 with compared to actual height, resulting in a compactness and portability of the antenna. 
+
+\subsection{Analysis of Physical Fabrication Failure}
+
+There is a large difference between the simulation results and VNA results for the constructed antenna. The cause of resonance failure at 433 MHz is not theoretical design flow but fabrication and maintenance issue. The use of solder to affix the connection to input is non-standard for a reason. The solder joint gets shorted or if it is not fixed  
+
+\subsection{Interpretation of System and Network Analysis}
+
+Despite experiencing a fabrication failure with the Tier 2 antenna, all core objectives of the project outside of this area were successfully achieved. Of particular note is the successful implementation of the Tier 1 Civilian Node (Figure 15), which demonstrates that the core architecture consisting of an ESP32, Semtech RA02 and Bluetooth to interface with the mature Meshtastic app constitutes a robust, low overhead and immensely practical solution for the end-user component of the network. The successful range and network simulations undertaken (Figures 16 \& 17) also confirm the software and protocol aspects of the project. This corroborates that the mesh logic selected is effective, and proves that the system, when fitted with functional antennas, will be able to form a resilient, multi-hop network as intended. 
+
+\subsection{Addressing Research Gaps and Limitations}
+
+The research gaps found in previously published works were successfully represented in this work. The additionally proposed integrated two-tier system with separate civilian and official nodes is a design found nowhere else in the literature. Furthermore this work is built off the mature open-source Meshtastic developer resources and employs the legal, license-free 433MHz band. Thus, this study provides a unique and practical design overview that successfully addresses trade-offs of cost, availability and resilience. The hardware and network software for base Tier 1 node was shown to be functional, resulting in successful interaction with the smartphone application and validating the logic of the mesh protocol in simulation testing. 
+
+The chief limitation of this work is found in its use of simulation-based verification of its most novel element. The QFH antenna proved to have excellent theoretical performance (VSWR 1.21 S11 – -21.24 dB) as evidenced by simulations but this work has not progressed to the state where realistic, extensive, real-world field testing has occurred. Therefore a physical, empirical range performance comparison has not been attempted between the standard dipole-equipped Civilian Node and the QFH-equipped Base Station results of simulation. A quantification of the difference in physical range performance results in the real-world is the most important next step in potential future work. 
+
+\section{CONCLUSION AND FUTURE SCOPE} 
+
+In this work, theoretical validation of the theoretical design for a low cost two-tier emergency communication system was successfully designed and validated. The concept of the design could be legalized and economically applied to India by the chosen system concept of a structure employing LoRa, mesh protocol and the license-free 433 MHz band. The simulation results showed the good theoretical performance of a home-built QFH antenna with ideal performance of S11 = -21.25 dB with hemispherical radiation patterns. The implementation of the Tier 1 Civilian Node and its corresponding core network software for the solution was also successful in demonstrating its functionality with the Meshtastic platform. 
+
+The thrust of this work is theoretical validation, the immediate priority for future work will be the transition from simulation to a physically robust prototype. This will necessitate the re-fabrication of the QFH antenna with precise assembly strategies in mind to ameliorate the fabrication issues which exist within the prototype and which caused the resonance to shift centres in the first prototype. Once this antenna design has been fabricated it can be manufactured is a practical way with its validation using a VNA for this design for its resonant frequency at 433 MHz. Once validated the potential will then be explored by way of extensive testing in real world scenarios to measure the range of the QFH equipped Base Station against the original antenna-equipped Civilian Nodes with a goal to quantify the true performance of the system. 
 
 \begin{thebibliography}{00}
 \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.

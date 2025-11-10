@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1762626954.0527 "c:/Users/Anek/Desktop/690b97b9dcd97edf96776add/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1762626954.64483 0
+["pdflatex"] 1762691395.10269 "c:/Users/Anek/Desktop/690b97b9dcd97edf96776add/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1762691396.11135 0
   "C:/Users/Anek/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1762366406 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Anek/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1762363446 13321383 daca3b089bd9d66e337d0c3dc3e04301 ""
   "C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -68,9 +68,9 @@
   "C:/Users/Anek/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/ot1ptm.fd" 1585253778 1007 15056f4a61917ceed3a44e4ac11fcc52 ""
   "C:/Users/Anek/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "IEEEtran.cls" 1762369429 288304 5b2e4fa15b0f7eabb840ebf67df4c0f7 ""
-  "c:/Users/Anek/Desktop/690b97b9dcd97edf96776add/conference_101719.tex" 1762626950 11628 0f7d590592aab8824058586064a9f3ed ""
-  "conference_101719.aux" 1762626954 1608 770243b44c10fc10df3e26ad7b9dbc1a "pdflatex"
-  "conference_101719.tex" 1762626950 11628 0f7d590592aab8824058586064a9f3ed ""
+  "c:/Users/Anek/Desktop/690b97b9dcd97edf96776add/conference_101719.tex" 1762691394 25842 1eacdd83a12437e311f6c173b18329c5 ""
+  "conference_101719.aux" 1762691395 2364 f8a2d41eca2fcfe72273c277b04d7291 "pdflatex"
+  "conference_101719.tex" 1762691394 25842 1eacdd83a12437e311f6c173b18329c5 ""
   (generated)
   "conference_101719.aux"
   "conference_101719.log"
