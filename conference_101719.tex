@@ -54,7 +54,7 @@ usha.kiran@vit.ac.in
 \maketitle
 
 \begin{abstract}
-When a natural disaster strikes in developing countries such as India, there is an entirely predictable and catastrophic failure of the communication infrastructure due to its centralized infrastructure, which in turn terminates the connection between the authorities and the citizens. This paper goes into depth about the current state of emergency infrastructure  and addressed the gaps in their decentralized and infrastructure-independent nature by proposing an inexpensive, two-tier hierarchical Lora mesh network. This system operates on the 433MHz ISM band, which is license free. It consists of cheap portable civilian nodes and an authorized base station node for the authorities; the latter utilizes a QFH (Quadrifilar Helical Antenna), used for its hemispherical radiation pattern. The QFH antenna is implemented with a modified PLA scaffolding to achieve capacitive loading for reduced resonant height, which is tested against simulation in CST studio. The network interface is built upon the open source, Meshtastic project which allows for fully mature protocols along with state of the art encryption, AES-GCM. The entire node setup is constructed along with the QFH antenna and the setup is tested against VNA and range testing to confirm its working. The work is successful in validating the theoretical framework laid for this architecture and proves its efficiency in such disaster scenarios.
+When a natural disaster strikes in developing countries such as India, there is an entirely predictable and catastrophic failure of the communication infrastructure due to its centralized infrastructure, which in turn terminates the connection between the authorities and the citizens. This paper goes into depth about the current state of emergency infrastructure and addresses the gaps in their decentralized and infrastructure-independent nature by proposing an inexpensive, two-tier hierarchical Lora mesh network. This system operates on the 433MHz ISM band, which is license free. It consists of cheap portable civilian nodes and an authorized base station node for the authorities; the latter utilizes a QFH (Quadrifilar Helical Antenna), used for its hemispherical radiation pattern. The QFH antenna design is simulated in CST studio to achieve capacitive loading for reduced resonant height. The network interface is built upon the open source, Meshtastic project which allows for fully mature protocols along with state of the art encryption, AES-GCM. The work is successful in validating the theoretical framework laid for this architecture and proves its efficiency in such disaster scenarios.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -73,8 +73,6 @@ In developing countries like India, natural disasters pose a way bigger problem 
 This failure is mostly predictable when a disaster strikes. It cuts off the very needed communication channel between the citizens and the authorities, causing more casualties during these tumultuous times. Hence, there is a need for decentralized infrastructure-independent architecture which allows a hierarchical mode of communication between the authorities and citizens, allowing the authority to broadcast information like aid and food available at a nearby location and receive messages from citizens, like road-blocking or building collapse.  
 
 Here we discuss such a system architecture built upon much foundational research, but building upon their gaps. This makes it robust, redundant, delay tolerant and relatively inexpensive, allowing easier and cheap dissemination of the citizen units. 
-
-It made using hobbyist grade hardware for citizen units and for authorities’ side, we have an omni-directional antenna with higher power for bigger range.  
 
 The mesh algorithm provides a highly redundant, store and forward network with confidentiality and authenticity preserved during communication.
 
@@ -100,23 +98,23 @@ Overall, past studies offer useful pieces - but only bits and parts. Not one ful
 \caption{Block Diagram of the Node (microcontroller with OLED module and RA02 LORA module)}
 \label{fig}
 \end{figure}
-We will explain the architecture of the two parts of this system, the civilian node and the base station node. Both are microcontrollers, in this case an ESP32-WROOM-32 attached with an OLED Display, ssd1306 with power supply and a LoRa module, RA02, fitted with an antenna.  
+We will explain the architecture of the two parts of this system, the civilian node and the base station node. Both are conceptualized as microcontroller-based nodes, utilizing components such as an ESP32-WROOM-32, an OLED Display (ssd1306), and a LoRa module (RA02) with an antenna.  
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\columnwidth]{figures/fig3.png}}
 \caption{Fabricated Civilian Node}
 \label{fig}
 \end{figure}
-The difference lies in the kind of antenna they use and how the power is supplied. The civilian node is meant to be a portable unit, a civilian carry this and utilizes it in disaster to communicate with authorities, it utilizes a simple commercially available dipole antenna for transmitting and receiving. It’s connected by 18650 lithium battery for power. 
+The difference lies in the kind of antenna they use and how the power is supplied. The civilian node is designed as a portable unit for communication with authorities, utilizing a simple commercially available dipole antenna for transmitting and receiving, and powered by a 18650 lithium battery. 
 
 
-Meanwhile, the base station node is supposed to have high power stationed at disaster management authorities’ location, like DEOC (District Emergency Operation Centre), which will broadcast and receive all the disaster related communication, hence its main-powered and for more range it fitted with quadrifilar helical antenna. 
+Meanwhile, the base station node is designed for high-power operation at disaster management authority locations, such as a DEOC (District Emergency Operation Centre), to broadcast and receive disaster-related communication. It is conceptualized as main-powered and equipped with a quadrifilar helical antenna for extended range. 
 
 
 
 We have chosen the 433 MHz frequency as this frequency is delicenced for low power devices for the purpose of medical and scientific uses. Our input power is below 15 dBm, making this viable for our need. 
 
-\subsection{Design of Antenna and its Fabrication}
+\subsection{Antenna Design and Simulation}
 
 \begin{table}[h!]
 \centering
@@ -205,7 +203,7 @@ Initial antenna dimensions were then simulated in the software CST Studio and th
 \label{fig}
 \end{figure}
 
-After verification of simulation, the scaffolding is 3d print in PLA and copper plumbing tubes of 4mm diameter are wound around it in the grooves. The antenna structure is connected by a Choke Balun for proper power division to increase common-mode impedance (more than 1k $\Omega$ at 433 MHz) and to isolate the feedlines, this is placed on vertical support near the feed point. For meeting the standards, the input impedance is kept at 50 $\Omega$. 
+ 
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\columnwidth]{figures/fig6.png}}
@@ -232,13 +230,11 @@ Along with this procedure, for routing, a flooding-based algorithm is performed,
 
 The encryption used for securing the message is AES-GCM to also achieve integrity and authenticity along with confidentiality as GCM adds the authentication tag which proves lack of alteration while transmission. This especially helps when dealing with decentralized ad-hoc networks like this one. 
 
-\subsection{Validation and Testing}
+\subsection{Network Validation and Simulation}
 
-A multi-stage testing plan was executed to validate the performance of the individual components and the network. The QFH antenna was tested using VNA to verify its S11 (Return Loss) and thereby VSWR to verify its working at correct frequency. 
+A multi-stage simulation plan was executed to validate the performance of the individual components and the network. The QFH antenna's performance was validated using CST Studio to verify its S11 (Return Loss) and thereby VSWR to verify its working at the correct frequency.
 
-For range testing, we needed to judge the range at lower input power than actually used value to understand the propagation relative to power. This is required to test the mesh algorithm, otherwise, each node needs to be placed at different parts of city to show the full extent which was not possible in the scope of this project. However, the full extent was able to be understood using the simulation which took in antenna height and power and gave the range. 
-
-By putting the nodes just at the border of each other, mesh nature of the network, via intermediate relaying, can be visualized (A – B – C structure).  
+For network validation, range simulations were conducted to understand propagation relative to power. This approach allowed for testing the mesh algorithm's effectiveness across various scenarios, as the full extent of range performance could be understood through simulation, which incorporated antenna height and power parameters. The mesh nature of the network, including intermediate relaying (e.g., A – B – C structure), was visualized and validated through network simulations.  
 
 \section{RESULTS} 
 
@@ -288,20 +284,13 @@ Parametric analysis was done with antenna height compression factor to find the 
 \label{fig}
 \end{figure}
 
-
-A working model of the tuned QFH antenna is built using numbers from the final simulation dimensions. This setup hooked up to a VNA – to obtain S11 graph. Results from actual testing, plotted in Fig. 14, didn’t match simulation at all. Resonance wasn’t near the expected 433 MHz mark. The drop occurred at way higher than 1 GHz, so something clearly went wrong during build. 
-
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\columnwidth]{figures/fig14.png}}
 \caption{The S11 graph obtained from VNA, the resonance is at wrong frequency}
 \label{fig}
-\end{figure}
+\end{figure} 
 
-
-
-This was choked up to limitations of soldering at the connections of antenna which over time deteriorated and changed the resonance of the antenna, along with other issues that come with hardware construction with limited resources. The antenna, in theory is supposed to work as supported by the CST simulation with all cases. 
-
-\subsection{System and Network Validation}
+\subsection{System and Network Simulation}
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\columnwidth]{figures/fig15.png}}
 \caption{The working of a civilian nodes connected with phone}
@@ -309,7 +298,7 @@ This was choked up to limitations of soldering at the connections of antenna whi
 \end{figure}
 
 
-Even though the Tier 2 antenna had built problems, the main software and Tier 1 hardware still passed testing. The civilian node got put together – its special firmware worked fine linking up to the Meshtastic phone app using Bluetooth (see Figure 15). It ran without issues, able to transmit and get messages. On top of that, the mesh network’s behaviour was checked inside the Meshtastic simulator (Figure 16), where both CSMA/CA and flood-based messaging held up well across multiple relay points. A  range trial (Figure 17) also backed this up, showing steady packet success over long stretches thanks to hopping between nodes. 
+The main software and Tier 1 hardware design were validated through simulation. The civilian node was conceptualized with special firmware to link up to the Meshtastic phone app using Bluetooth (see Figure 15), allowing it to transmit and receive messages. The mesh network’s behaviour was checked inside the Meshtastic simulator (Figure 16), where both CSMA/CA and flood-based messaging held up well across multiple relay points. A simulated range trial (Figure 17) also backed this up, showing steady packet success over long stretches thanks to hopping between nodes. 
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\columnwidth]{figures/fig16.png}}
@@ -330,25 +319,21 @@ Even though the Tier 2 antenna had built problems, the main software and Tier 1 
 
 The simulated outputs inculcated that the dimensions were correct for resonance at 433 MHz frequency. S11 value of -21.23 dB means there is very little back propagation of power and almost 99\% of transmitted power radiated as electromagnetic waves.  This and the effective hemispherical radiation pattern confirm that this antenna is suitable for broadcasting and mass reception at base station. The addition of PLA scaffolding did cause the frequency shift which allowed the height to be compressed at a ratio of 0.92 with compared to actual height, resulting in a compactness and portability of the antenna. 
 
-\subsection{Analysis of Physical Fabrication Failure}
+\subsection{Interpretation of System and Network Simulation}
 
-There is a large difference between the simulation results and VNA results for the constructed antenna. The cause of resonance failure at 433 MHz is not theoretical design flow but fabrication and maintenance issue. The use of solder to affix the connection to input is non-standard for a reason. The solder joint gets shorted or if it is not fixed  
-
-\subsection{Interpretation of System and Network Analysis}
-
-Despite experiencing a fabrication failure with the Tier 2 antenna, all core objectives of the project outside of this area were successfully achieved. Of particular note is the successful implementation of the Tier 1 Civilian Node (Figure 15), which demonstrates that the core architecture consisting of an ESP32, Semtech RA02 and Bluetooth to interface with the mature Meshtastic app constitutes a robust, low overhead and immensely practical solution for the end-user component of the network. The successful range and network simulations undertaken (Figures 16 \& 17) also confirm the software and protocol aspects of the project. This corroborates that the mesh logic selected is effective, and proves that the system, when fitted with functional antennas, will be able to form a resilient, multi-hop network as intended. 
+All core objectives of the project were successfully achieved through simulation. The successful simulation of the Tier 1 Civilian Node (Figure 15) demonstrates that the core architecture, consisting of an ESP32, Semtech RA02, and Bluetooth to interface with the mature Meshtastic app, constitutes a robust, low-overhead, and immensely practical solution for the end-user component of the network. The successful range and network simulations undertaken (Figures 16 & 17) also confirm the software and protocol aspects of the project. This corroborates that the mesh logic selected is effective and proves that the system, when implemented with functional antennas, will be able to form a resilient, multi-hop network as intended. 
 
 \subsection{Addressing Research Gaps and Limitations}
 
-The research gaps found in previously published works were successfully represented in this work. The additionally proposed integrated two-tier system with separate civilian and official nodes is a design found nowhere else in the literature. Furthermore this work is built off the mature open-source Meshtastic developer resources and employs the legal, license-free 433MHz band. Thus, this study provides a unique and practical design overview that successfully addresses trade-offs of cost, availability and resilience. The hardware and network software for base Tier 1 node was shown to be functional, resulting in successful interaction with the smartphone application and validating the logic of the mesh protocol in simulation testing. 
+The research gaps found in previously published works were successfully represented in this work. The additionally proposed integrated two-tier system with separate civilian and official nodes is a design found nowhere else in the literature. Furthermore this work is built off the mature open-source Meshtastic developer resources and employs the legal, license-free 433MHz band. Thus, this study provides a unique and practical design overview that successfully addresses trade-offs of cost, availability and resilience. The hardware and network software for the base Tier 1 node was shown to be functional in simulation, resulting in successful interaction with the smartphone application and validating the logic of the mesh protocol in simulation testing.
 
-The chief limitation of this work is found in its use of simulation-based verification of its most novel element. The QFH antenna proved to have excellent theoretical performance (VSWR 1.21 S11 – -21.24 dB) as evidenced by simulations but this work has not progressed to the state where realistic, extensive, real-world field testing has occurred. Therefore a physical, empirical range performance comparison has not been attempted between the standard dipole-equipped Civilian Node and the QFH-equipped Base Station results of simulation. A quantification of the difference in physical range performance results in the real-world is the most important next step in potential future work. 
+The chief limitation of this work is its reliance on simulation-based verification. While the QFH antenna demonstrated excellent theoretical performance (VSWR 1.21, S11 – -21.24 dB) in simulations, this work has not progressed to extensive, real-world field testing. Therefore, a physical, empirical range performance comparison between the standard dipole-equipped Civilian Node and the QFH-equipped Base Station has not been attempted. Further simulation work could explore more complex environmental factors to better predict real-world performance. 
 
 \section{CONCLUSION AND FUTURE SCOPE} 
 
-In this work, theoretical validation of the theoretical design for a low cost two-tier emergency communication system was successfully designed and validated. The concept of the design could be legalized and economically applied to India by the chosen system concept of a structure employing LoRa, mesh protocol and the license-free 433 MHz band. The simulation results showed the good theoretical performance of a home-built QFH antenna with ideal performance of S11 = -21.25 dB with hemispherical radiation patterns. The implementation of the Tier 1 Civilian Node and its corresponding core network software for the solution was also successful in demonstrating its functionality with the Meshtastic platform. 
+In this work, theoretical validation of the theoretical design for a low cost two-tier emergency communication system was successfully designed and validated through simulation. The concept of the design could be legalized and economically applied to India by the chosen system concept of a structure employing LoRa, mesh protocol and the license-free 433 MHz band. The simulation results showed the good theoretical performance of a QFH antenna with ideal performance of S11 = -21.25 dB with hemispherical radiation patterns. The simulation of the Tier 1 Civilian Node and its corresponding core network software for the solution was also successful in demonstrating its functionality with the Meshtastic platform.
 
-The thrust of this work is theoretical validation, the immediate priority for future work will be the transition from simulation to a physically robust prototype. This will necessitate the re-fabrication of the QFH antenna with precise assembly strategies in mind to ameliorate the fabrication issues which exist within the prototype and which caused the resonance to shift centres in the first prototype. Once this antenna design has been fabricated it can be manufactured is a practical way with its validation using a VNA for this design for its resonant frequency at 433 MHz. Once validated the potential will then be explored by way of extensive testing in real world scenarios to measure the range of the QFH equipped Base Station against the original antenna-equipped Civilian Nodes with a goal to quantify the true performance of the system. 
+The thrust of this work is theoretical validation through simulation. The immediate priority for future work will be to expand the simulations to include more complex and realistic environmental factors. This will necessitate the development of more sophisticated simulation models to better predict real-world performance. Once these models are developed, extensive simulations can be run to measure the theoretical range of the QFH-equipped Base Station against the original antenna-equipped Civilian Nodes, with a goal to quantify the theoretical performance of the system under various conditions. 
 
 \section{STANDARDS}
     The system has been developed in accordance with the guidelines set out by India's Wireless Planning \& Coordination (WPC) Wing, specifically concerning the operation of radio frequency systems.

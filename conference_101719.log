@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.5)  11 NOV 2025 20:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.5)  17 NOV 2025 21:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/Anek/Desktop/690b97b9dcd97edf96776add/conference_101719.tex
-(c:/Users/Anek/Desktop/690b97b9dcd97edf96776add/conference_101719.tex
+**c:/Users/Anek/Desktop/paper/conference_101719.tex
+(c:/Users/Anek/Desktop/paper/conference_101719.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-10-09>
 (IEEEtran.cls
@@ -233,63 +233,23 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 ) (C:\Users\Anek\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count306
-) (conference_101719.aux
-
-LaTeX Warning: Label `fig' multiply defined.
-
-
-LaTeX Warning: Label `fig' multiply defined.
-
-
-LaTeX Warning: Label `fig' multiply defined.
-
-
-LaTeX Warning: Label `fig' multiply defined.
-
-
-LaTeX Warning: Label `fig' multiply defined.
-
-
-LaTeX Warning: Label `fig' multiply defined.
-
-
-LaTeX Warning: Label `fig' multiply defined.
-
-
-LaTeX Warning: Label `fig' multiply defined.
-
-
-LaTeX Warning: Label `fig' multiply defined.
-
-
-LaTeX Warning: Label `fig' multiply defined.
-
-
-LaTeX Warning: Label `fig' multiply defined.
-
-
-LaTeX Warning: Label `fig' multiply defined.
-
-
-LaTeX Warning: Label `fig' multiply defined.
-
-)
+) (conference_101719.aux)
 \openout1 = `conference_101719.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 -- Lines per column: 56 (exact).
 (C:\Users\Anek\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
@@ -311,16 +271,6 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\Anek\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 58.
- (C:\Users\Anek\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 58.
- (C:\Users\Anek\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 58.
-
 
 
 
@@ -332,20 +282,24 @@ LaTeX Font Info:    Calculating math sizes for size <11> on input line 58.
 <figures/fig2.png, id=9, 453.19313pt x 345.54094pt>
 File: figures/fig2.png Graphic file (type png)
 <use figures/fig2.png>
-Package pdftex.def Info: figures/fig2.png  used on input line 103.
+Package pdftex.def Info: figures/fig2.png  used on input line 97.
 (pdftex.def)             Requested size: 252.0pt x 192.14128pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 
 [2]
 <figures/fig3.png, id=14, 491.58656pt x 676.02562pt>
 File: figures/fig3.png Graphic file (type png)
 <use figures/fig3.png>
-Package pdftex.def Info: figures/fig3.png  used on input line 110.
+Package pdftex.def Info: figures/fig3.png  used on input line 104.
 (pdftex.def)             Requested size: 252.0pt x 346.55304pt.
-
+LaTeX Font Info:    Trying to load font information for U+msa on input line 123.
+ (C:\Users\Anek\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 123.
+ (C:\Users\Anek\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -354,135 +308,148 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
+<figures/fig4.png, id=15, 432.11438pt x 228.10219pt>
+File: figures/fig4.png Graphic file (type png)
+<use figures/fig4.png>
+Package pdftex.def Info: figures/fig4.png  used on input line 193.
+(pdftex.def)             Requested size: 252.0pt x 133.0233pt.
 
 
 [3 <./figures/fig2.png> <./figures/fig3.png>]
-<figures/fig4.png, id=23, 432.11438pt x 228.10219pt>
-File: figures/fig4.png Graphic file (type png)
-<use figures/fig4.png>
-Package pdftex.def Info: figures/fig4.png  used on input line 199.
-(pdftex.def)             Requested size: 252.0pt x 133.0233pt.
 <figures/fig5.png, id=24, 490.08093pt x 178.41656pt>
 File: figures/fig5.png Graphic file (type png)
 <use figures/fig5.png>
-Package pdftex.def Info: figures/fig5.png  used on input line 207.
+Package pdftex.def Info: figures/fig5.png  used on input line 201.
 (pdftex.def)             Requested size: 252.0pt x 91.73988pt.
 <figures/fig6.png, id=25, 1799.97469pt x 1397.97281pt>
 File: figures/fig6.png Graphic file (type png)
 <use figures/fig6.png>
-Package pdftex.def Info: figures/fig6.png  used on input line 215.
+Package pdftex.def Info: figures/fig6.png  used on input line 209.
 (pdftex.def)             Requested size: 252.0pt x 195.71486pt.
 
 
 <figures/fig7.png, id=26, 542.025pt x 1204.5pt>
 File: figures/fig7.png Graphic file (type png)
 <use figures/fig7.png>
-Package pdftex.def Info: figures/fig7.png  used on input line 225.
+Package pdftex.def Info: figures/fig7.png  used on input line 219.
 (pdftex.def)             Requested size: 151.20154pt x 336.00792pt.
 
 
-[4 <./figures/fig4.png> <./figures/fig5.png> <./figures/fig6.png>]
-<figures/fig8.png, id=34, 707.64375pt x 358.941pt>
+[4 <./figures/fig4.png> <./figures/fig5.png> <./figures/fig6.png> <./figures/fig7.png>]
+<figures/fig8.png, id=33, 707.64375pt x 358.941pt>
 File: figures/fig8.png Graphic file (type png)
 <use figures/fig8.png>
-Package pdftex.def Info: figures/fig8.png  used on input line 251.
+Package pdftex.def Info: figures/fig8.png  used on input line 243.
 (pdftex.def)             Requested size: 252.0pt x 127.82202pt.
-<figures/fig9_1.png, id=35, 439.6425pt x 254.45062pt>
+<figures/fig9_1.png, id=34, 439.6425pt x 254.45062pt>
 File: figures/fig9_1.png Graphic file (type png)
 <use figures/fig9_1.png>
-Package pdftex.def Info: figures/fig9_1.png  used on input line 257.
+Package pdftex.def Info: figures/fig9_1.png  used on input line 249.
 (pdftex.def)             Requested size: 252.0pt x 145.84593pt.
-<figures/fig9_2.png, id=36, 1209.76968pt x 474.27188pt>
+<figures/fig9_2.png, id=35, 1209.76968pt x 474.27188pt>
 File: figures/fig9_2.png Graphic file (type png)
 <use figures/fig9_2.png>
-Package pdftex.def Info: figures/fig9_2.png  used on input line 258.
+Package pdftex.def Info: figures/fig9_2.png  used on input line 250.
 (pdftex.def)             Requested size: 252.0pt x 98.7895pt.
-<figures/fig10_1.png, id=37, 432.11438pt x 228.10219pt>
+<figures/fig10_1.png, id=36, 432.11438pt x 228.10219pt>
 File: figures/fig10_1.png Graphic file (type png)
 <use figures/fig10_1.png>
-Package pdftex.def Info: figures/fig10_1.png  used on input line 265.
+Package pdftex.def Info: figures/fig10_1.png  used on input line 257.
 (pdftex.def)             Requested size: 252.0pt x 133.0233pt.
-<figures/fig10_2.png, id=38, 1201.48875pt x 466.74374pt>
+<figures/fig10_2.png, id=37, 1201.48875pt x 466.74374pt>
 File: figures/fig10_2.png Graphic file (type png)
 <use figures/fig10_2.png>
-Package pdftex.def Info: figures/fig10_2.png  used on input line 266.
+Package pdftex.def Info: figures/fig10_2.png  used on input line 258.
 (pdftex.def)             Requested size: 252.0pt x 97.89088pt.
-<figures/fig11.png, id=39, 447.17062pt x 169.38281pt>
+<figures/fig11.png, id=38, 447.17062pt x 169.38281pt>
 File: figures/fig11.png Graphic file (type png)
 <use figures/fig11.png>
-Package pdftex.def Info: figures/fig11.png  used on input line 274.
+Package pdftex.def Info: figures/fig11.png  used on input line 266.
 (pdftex.def)             Requested size: 252.0pt x 95.45592pt.
 
 
-<figures/fig12.png, id=40, 585.68813pt x 457.71pt>
+
+
+[5 <./figures/fig8.png> <./figures/fig9_1.png> <./figures/fig9_2.png> <./figures/fig10_1.png> <./figures/fig10_2.png> <./figures/fig11.png>]
+<figures/fig12.png, id=48, 585.68813pt x 457.71pt>
 File: figures/fig12.png Graphic file (type png)
 <use figures/fig12.png>
-Package pdftex.def Info: figures/fig12.png  used on input line 283.
+Package pdftex.def Info: figures/fig12.png  used on input line 275.
 (pdftex.def)             Requested size: 252.0pt x 196.93718pt.
-<figures/fig13.jpg, id=41, 453.19313pt x 254.45062pt>
+<figures/fig13.jpg, id=49, 453.19313pt x 254.45062pt>
 File: figures/fig13.jpg Graphic file (type jpg)
 <use figures/fig13.jpg>
-Package pdftex.def Info: figures/fig13.jpg  used on input line 290.
+Package pdftex.def Info: figures/fig13.jpg  used on input line 282.
 (pdftex.def)             Requested size: 252.0pt x 141.48965pt.
-<figures/fig14.png, id=42, 453.19313pt x 339.51843pt>
+<figures/fig14.png, id=50, 453.19313pt x 339.51843pt>
 File: figures/fig14.png Graphic file (type png)
 <use figures/fig14.png>
-Package pdftex.def Info: figures/fig14.png  used on input line 299.
+Package pdftex.def Info: figures/fig14.png  used on input line 288.
 (pdftex.def)             Requested size: 252.0pt x 188.79242pt.
-
-
-[5 <./figures/fig7.png> <./figures/fig8.png> <./figures/fig9_1.png> <./figures/fig9_2.png>]
-
-<figures/fig15.png, id=49, 3176.86874pt x 2087.8pt>
+<figures/fig15.png, id=51, 3176.86874pt x 2087.8pt>
 File: figures/fig15.png Graphic file (type png)
 <use figures/fig15.png>
-Package pdftex.def Info: figures/fig15.png  used on input line 310.
+Package pdftex.def Info: figures/fig15.png  used on input line 295.
 (pdftex.def)             Requested size: 252.0pt x 165.59384pt.
-<figures/fig16.png, id=50, 452.69125pt x 311.1625pt>
+<figures/fig16.png, id=52, 452.69125pt x 311.1625pt>
 File: figures/fig16.png Graphic file (type png)
 <use figures/fig16.png>
-Package pdftex.def Info: figures/fig16.png  used on input line 319.
+Package pdftex.def Info: figures/fig16.png  used on input line 304.
 (pdftex.def)             Requested size: 252.0pt x 173.21475pt.
-<figures/fig17.png, id=51, 841.34325pt x 387.24675pt>
+<figures/fig17.png, id=53, 841.34325pt x 387.24675pt>
 File: figures/fig17.png Graphic file (type png)
 <use figures/fig17.png>
-Package pdftex.def Info: figures/fig17.png  used on input line 325.
+Package pdftex.def Info: figures/fig17.png  used on input line 310.
 (pdftex.def)             Requested size: 252.0pt x 115.98582pt.
 
 
-[6 <./figures/fig10_1.png> <./figures/fig10_2.png> <./figures/fig11.png> <./figures/fig12.png> <./figures/fig13.jpg> <./figures/fig14.png>]
+
+
+[6 <./figures/fig12.png> <./figures/fig13.jpg> <./figures/fig14.png> <./figures/fig15.png> <./figures/fig16.png>]
+c:/Users/Anek/Desktop/paper/conference_101719.tex:324: Misplaced alignment tab character &.
+l.324 ...work simulations undertaken (Figures 16 &
+                                                   17) also confirm the soft...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Underfull \hbox (badness 1748) in paragraph at lines 330--331
+[]\OT1/ptm/m/n/10 The chief lim-i-ta-tion of this work is its re-liance on
+ []
 
 
 
-[7 <./figures/fig15.png> <./figures/fig16.png> <./figures/fig17.png>]
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 376--377
+[7 <./figures/fig17.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
 []\OT1/ptm/m/n/10 AES-GCM (Ad-vanced En-cryp-tion Stan-dard in
  []
 
 
-Underfull \hbox (badness 1546) in paragraph at lines 376--377
+Underfull \hbox (badness 1546) in paragraph at lines 357--358
 \OT1/ptm/m/n/10 Ga-lois/Counter Mode) Pro-to-col, rec-og-nized by NIST as
  []
 
 
-Overfull \hbox (26.17433pt too wide) detected at line 459
+Overfull \hbox (26.17433pt too wide) detected at line 440
 [][][]
  []
 
 
-Underfull \vbox (badness 1194) has occurred while \output is active []
+
+
+Overfull \hbox (26.17433pt too wide) detected at line 453
+[][][]
+ []
 
 
 
 [8]
-Overfull \hbox (26.17433pt too wide) detected at line 472
-[][][]
- []
-
-
-
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -496,26 +463,30 @@ Before submitting the final camera ready copy, remember to:
 
 
 
-[9] (conference_101719.aux)
+
+
+[9
+
+] (conference_101719.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-10-09>
  ***********
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 4358 strings out of 468080
- 69673 string characters out of 5426256
- 493854 words of memory out of 5000000
- 32989 multiletter control sequences out of 15000+600000
- 672908 words of font info for 129 fonts, out of 8000000 for 9000
+ 4332 strings out of 468080
+ 69129 string characters out of 5426256
+ 499113 words of memory out of 5000000
+ 32965 multiletter control sequences out of 15000+600000
+ 666903 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,12n,65p,2123b,308s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,12n,65p,2104b,268s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (9 pages, 7532830 bytes).
+Output written on conference_101719.pdf (9 pages, 7530072 bytes).
 PDF statistics:
  142 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
