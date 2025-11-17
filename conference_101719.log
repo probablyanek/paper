@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.5)  17 NOV 2025 21:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.5)  17 NOV 2025 21:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -233,7 +233,47 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 ) (C:\Users\Anek\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count306
-) (conference_101719.aux)
+) (conference_101719.aux
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+)
 \openout1 = `conference_101719.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
@@ -406,17 +446,6 @@ Package pdftex.def Info: figures/fig17.png  used on input line 310.
 
 
 [6 <./figures/fig12.png> <./figures/fig13.jpg> <./figures/fig14.png> <./figures/fig15.png> <./figures/fig16.png>]
-c:/Users/Anek/Desktop/paper/conference_101719.tex:324: Misplaced alignment tab character &.
-l.324 ...work simulations undertaken (Figures 16 &
-                                                   17) also confirm the soft...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-
 Underfull \hbox (badness 1748) in paragraph at lines 330--331
 []\OT1/ptm/m/n/10 The chief lim-i-ta-tion of this work is its re-liance on
  []
@@ -474,19 +503,19 @@ L3 programming layer <2025-10-09>
  ***********
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  4332 strings out of 468080
  69129 string characters out of 5426256
- 499113 words of memory out of 5000000
+ 499402 words of memory out of 5000000
  32965 multiletter control sequences out of 15000+600000
  666903 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,12n,65p,2104b,268s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Anek/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (9 pages, 7530072 bytes).
+Output written on conference_101719.pdf (9 pages, 7530070 bytes).
 PDF statistics:
  142 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
