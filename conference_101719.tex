@@ -7,56 +7,54 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
+\makeatletter
+\newcommand{\linebreakand}{%
+  \end{@IEEEauthorhalign}
+  \hfill\mbox{}\par
+  \mbox{}\hfill
+  \begin{@IEEEauthorhalign}
+}
+\makeatother
+
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Test*\\
-{\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
-should not be used}
-\thanks{Identify applicable funding agency here. If none, delete this.}
+\title{A Low-Cost Two-Tier Emergency
+Communication System\\
 }
-
-\author{\IEEEauthorblockN{1\textsuperscript{st} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\author{\IEEEauthorblockN{Anek Sreedhar T S}
+\IEEEauthorblockA{\textit{School of Electronics Engineering} \\
+\textit{Vellore Institute of Technology, Chennai Campus}\\
+Chennai, India \\
+aneksreedhar@gmail.com
+\\ORCID: 0009-0001-0070-5743}
 \and
-\IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\IEEEauthorblockN{Avinash Nair}
+\IEEEauthorblockA{\textit{School of Electronics Engineering} \\
+\textit{Vellore Institute of Technology, Chennai Campus}\\
+Chennai, India \\
+avinash.nair2004@gmail.com
+\\ORCID: 0009-0002-7956-6412}
+\linebreakand % This command creates the line break for the 2x2 format
+\IEEEauthorblockN{Dasangam Akash}
+\IEEEauthorblockA{\textit{School of Electronics Engineering} \\
+\textit{Vellore Institute of Technology, Chennai Campus}\\
+Chennai, India \\
+dasangamakash515@gmail.com
+\\ORCID: 0009-0006-3714-3875}
 \and
-\IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{5\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\IEEEauthorblockN{Usha Kiran Kommuri}
+\IEEEauthorblockA{\textit{School of Electronics Engineering} \\
+\textit{Vellore Institute of Technology, Chennai Campus}\\
+Chennai, India \\
+usha.kiran@vit.ac.in
+\\ORCID: 0000-0002-5651-1374}
 }
-
 \maketitle
 
 \begin{abstract}
+When a natural disaster strikes in developing countries such as India, there is an entirely predictable and catastrophic failure of the communication infrastructure due to its centralized infrastructure, which in turn terminates the connection between the authorities and the citizens. This paper goes into depth about the current state of emergency infrastructure  and addressed the gaps in their decentralized and infrastructure-independent nature by proposing an inexpensive, two-tier hierarchical Lora mesh network. This system operates on the 433MHz ISM band, which is license free. It consists of cheap portable civilian nodes and an authorized base station node for the authorities; the latter utilizes a QFH (Quadrifilar Helical Antenna), used for its hemispherical radiation pattern. The QFH antenna is implemented with a modified PLA scaffolding to achieve capacitive loading for reduced resonant height, which is tested against simulation in CST studio. The network interface is built upon the open source, Meshtastic project which allows for fully mature protocols along with state of the art encryption, AES-GCM. The entire node setup is constructed along with the QFH antenna and the setup is tested against VNA and range testing to confirm its working. The work is successful in validating the theoretical framework laid for this architecture and proves its efficiency in such disaster scenarios.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -64,7 +62,11 @@ component, formatting, style, styling, insert
 \end{IEEEkeywords}
 
 \section{INTRODUCTION}
-%% FIGURE 1:Cell Tower Collapsed Due to Hurricane
+% \begin{figure}[htbp]
+% \centerline{\includegraphics[width=\columnwidth]{figures/fig1.png}}
+% \caption{Cell Tower Collapsed Due to Hurricane}
+% \label{fig}
+% \end{figure}
 
 In developing countries like India, natural disasters pose a way bigger problem compared to other countries. This is due to the systemic and catastrophic failure of the centralized communication infrastructure. This has been a recurrent issue, in Orissa Super Cyclone (1999), the Bhuj Earthquake (2001) and the Kerala Floods (2018). The underlying problem is not just the disaster but also the centralized highly interdependent nature of network infrastructure, if power grid or the cell tower or internet fiber poles is damaged, the system goes down. Hence, there are multiple points of complete failure. 
 
@@ -93,10 +95,18 @@ Overall, past studies offer useful pieces - but only bits and parts. Not one ful
 \section{METHODOLOGY}
 
 \subsection{System Architecture and Design} 
-%% FIGURE 2: Block Diagram of the Node (microcontroller with OLED module and RA02 LORA module)
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\columnwidth]{figures/fig2.png}}
+\caption{Block Diagram of the Node (microcontroller with OLED module and RA02 LORA module)}
+\label{fig}
+\end{figure}
 We will explain the architecture of the two parts of this system, the civilian node and the base station node. Both are microcontrollers, in this case an ESP32-WROOM-32 attached with an OLED Display, ssd1306 with power supply and a LoRa module, RA02, fitted with an antenna.  
 
-%% FIGURE 3: Fabricated Civilian Node
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\columnwidth]{figures/fig3.png}}
+\caption{Fabricated Civilian Node}
+\label{fig}
+\end{figure}
 The difference lies in the kind of antenna they use and how the power is supplied. The civilian node is meant to be a portable unit, a civilian carry this and utilizes it in disaster to communicate with authorities, it utilizes a simple commercially available dipole antenna for transmitting and receiving. It’s connected by 18650 lithium battery for power. 
 
 
@@ -108,27 +118,110 @@ We have chosen the 433 MHz frequency as this frequency is delicenced for low pow
 
 \subsection{Design of Antenna and its Fabrication}
 
+\begin{table}[h!]
+\centering
+\caption{General parameters}
+\label{tab:general_params}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Parameter (Symbol)} & \textbf{Value (Unit)} \\
+\hline
+Wavelength ($\lambda$) & 692.8 mm \\
+\hline
+Compensated wavelength ($\lambda_c$) & 739.9 mm \\
+\hline
+Bending correction ($b_{corr}$) & 0.8 mm \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Larger Loop}
+\label{tab:larger_loop}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Quantity (Symbol)} & \textbf{Value (Unit)} \\
+\hline
+Total length ($L_1$) & 759.1 mm \\
+\hline
+Compensated total length ($L_{1c}$) & 762.6 mm \\
+\hline
+Horizontal separator ($R_1$) & 78.1 mm \\
+\hline
+Vertical separator ($V_1$) & 303.1 mm \\
+\hline
+Compensated values ($R_{1c}, V_{1c}$) & 74.1 mm, 299.1 mm \\
+\hline
+Antenna height ($H_1$) & 177.6 mm \\
+\hline
+Internal diameter ($D_{i1}$) & 74.1 mm \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Smaller Loop}
+\label{tab:smaller_loop}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Quantity (Symbol)} & \textbf{Value (Unit)} \\
+\hline
+Total length ($L_2$) & 721.4 mm \\
+\hline
+Compensated total length ($L_{2c}$) & 724.8 mm \\
+\hline
+Horizontal separator ($R_2$) & 74.3 mm \\
+\hline
+Vertical separator ($V_2$) & 288.1 mm \\
+\hline
+Compensated values ($R_{2c}, V_{2c}$) & 70.3 mm, 284.1 mm \\
+\hline
+Antenna height ($H_2$) & 168.8 mm \\
+\hline
+Internal diameter ($D_{i2}$) & 70.3 mm \\
+\hline
+\end{tabular}
+\end{table}
+
 The quadrifilar antenna is used here for its circular polarization and hemispherical radiation pattern. We utilized John Coppens’ well-reputed QFH calculator for designing the dimensions of the antenna, which is based on prior foundational work in QFH antenna, like the design shown by George Goodroe (KF4CPJ) [x].  
 
 
 
 There are two orthogonal loops involved, one longer than the other, for achieving circular polarization. This removed the need for ground/reflector for back-reflection to increase the directivity. The calculator utilized formulae and look up table from the existing literature. See appendix for those. After calculator dimensions were found we moved on to synthesis.
 
-%% FIGURE 4: QFH Antenna modelled in CST Studio
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\columnwidth]{figures/fig4.png}}
+\caption{QFH Antenna modelled in CST Studio}
+\label{fig}
+\end{figure}
 
 Initial antenna dimensions were then simulated in the software CST Studio and the S11 graph checked to verify the resonance at correct frequency and the radiation pattern. But that size was too large for our testing purposes so utilised a capacitive loading method using, dielectric in our case, PLA scaffolding that holds the antenna but also adds capacitance shifting the resonance to lower frequency giving us leeway to shrink the coil length to get back to correct resonant frequency. This is verified by parametric analysis after adding PLA scaffolding. 
 
-%% FIGURE 5: QFH Antenna constructed
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\columnwidth]{figures/fig5.png}}
+\caption{QFH Antenna constructed}
+\label{fig}
+\end{figure}
 
 After verification of simulation, the scaffolding is 3d print in PLA and copper plumbing tubes of 4mm diameter are wound around it in the grooves. The antenna structure is connected by a Choke Balun for proper power division to increase common-mode impedance (more than 1k $\Omega$ at 433 MHz) and to isolate the feedlines, this is placed on vertical support near the feed point. For meeting the standards, the input impedance is kept at 50 $\Omega$. 
 
-%% FIGURE 6:Base Station Node with the QFH antenna
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\columnwidth]{figures/fig6.png}}
+\caption{Base Station Node with the QFH antenna}
+\label{fig}
+\end{figure}
 
 \subsection{Network Protocol and Software Implementation}
 
 The code for the system was developed in C++ coding language for its objected oriented paradigm needed for the libraries for we used which included ‘RadioLib’ for LoRa handling and ‘Crypto’ for encryption. The code is derived from the open-source repository for mesh based off-grid LoRa communication, ‘Meshtastic’, but since the project doesn’t support the cheap available, ESP32-WROOM-32, changes were made to many parts of the code. We used PlatformIO IDE to deploy the code. This software stack helped in creating node-to-app communication and the mesh protocol. 
 
-%% FIGURE 7: Chat Interface of the App
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.6\columnwidth]{figures/fig7.png}}
+\caption{Chat Interface of the App}
+\label{fig}
+\end{figure}
 The application interface managed the connection from microcontroller to phone using Bluetooth Low Energy (BLE) and conversion of user messages and mobile GPS data to and from packets in LoRa. 
 
 The transmitted packet contains packet structure, structural information about the packet like Destination, Source and Packet ID along with a Time-to-Live counter which counts hops left to limit packet propagation and the encrypted data. 
@@ -150,45 +243,85 @@ By putting the nodes just at the border of each other, mesh nature of the networ
 \section{RESULTS} 
 
 \subsection{QFH Antenna Simulation}
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\columnwidth]{figures/fig8.png}}
+\caption{The dimensions obtained for 443 MHz Resonance}
+\label{fig}
+\end{figure}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig9_1.png}
+\includegraphics[width=\columnwidth]{figures/fig9_2.png}
+\caption{S11 parameter of the simulation of QFH antenna}
+\label{fig:fig9}
+\end{figure}
 
-%% FIGURE 8: The dimensions obtained for 443 MHz Resonance
-
-%% FIGURE 9: S11 parameter of the simulation of QFH antenna (consists of 9_1 and 9_2 lined up horizontally)
-
-%% FIGURE 10: S11 parameter of the simulation of QFH antenna with PLA scaffolding (consists of 10_1 and 10_2 lined up horizontally)
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig10_1.png}
+\includegraphics[width=\columnwidth]{figures/fig10_2.png}
+\caption{S11 parameter of the simulation of QFH antenna with PLA scaffolding}
+\label{fig:fig10}
+\end{figure}
 
 The QFH antenna for the Tier 2 Base Station is modelled and fine-tuned in CST Studio Suite. The objective was to achieve resonance at 433 MHz which for which dimensions were found using calculator, shown in Figure 8. First the antenna alone was simulated in Figure 9 to get a reference point on its S11 behaviour. Then PLA structure was added for another run (seen in Figure 10), revealing a definite move in resonance. 
 
-%% FIGURE 11:Parametric Analysis done in Simulation to find the new height for 443 MHz Resonant Frequency
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\columnwidth]{figures/fig11.png}}
+\caption{Parametric Analysis done in Simulation to find the new height for 443 MHz Resonant Frequency}
+\label{fig}
+\end{figure}
 
 
 Parametric analysis was done with antenna height compression factor to find the heigh needed to achieve resonance again. Because of this fine-tuning, simulation showed an end result of –21.25 dB S11 at 433.58 MHz the 3D radiation pattern from testing (shown in Figure 12) got reviewed too, showing the signal spreads like a semi-sphere. 
 
-%% FIGURE 12:Radiation Pattern of Simulated QFH Antenna
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\columnwidth]{figures/fig12.png}}
+\caption{Radiation Pattern of Simulated QFH Antenna}
+\label{fig}
+\end{figure}
 
 \subsection{QFH Antenna Physical Validation}
-
-%% FIGURE 13:The QFH Antenna is Tested with VNA
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\columnwidth]{figures/fig13.jpg}}
+\caption{The QFH Antenna is Tested with VNA}
+\label{fig}
+\end{figure}
 
 
 A working model of the tuned QFH antenna is built using numbers from the final simulation dimensions. This setup hooked up to a VNA – to obtain S11 graph. Results from actual testing, plotted in Fig. 14, didn’t match simulation at all. Resonance wasn’t near the expected 433 MHz mark. The drop occurred at way higher than 1 GHz, so something clearly went wrong during build. 
 
-%% FIGURE 14:The S11 graph obtained from VNA, the resonance is at wrong frequency
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\columnwidth]{figures/fig14.png}}
+\caption{The S11 graph obtained from VNA, the resonance is at wrong frequency}
+\label{fig}
+\end{figure}
 
 
 
 This was choked up to limitations of soldering at the connections of antenna which over time deteriorated and changed the resonance of the antenna, along with other issues that come with hardware construction with limited resources. The antenna, in theory is supposed to work as supported by the CST simulation with all cases. 
 
 \subsection{System and Network Validation}
-
-%% FIGURE 15: The working of a civilian nodes connected with phone
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\columnwidth]{figures/fig15.png}}
+\caption{The working of a civilian nodes connected with phone}
+\label{fig}
+\end{figure}
 
 
 Even though the Tier 2 antenna had built problems, the main software and Tier 1 hardware still passed testing. The civilian node got put together – its special firmware worked fine linking up to the Meshtastic phone app using Bluetooth (see Figure 15). It ran without issues, able to transmit and get messages. On top of that, the mesh network’s behaviour was checked inside the Meshtastic simulator (Figure 16), where both CSMA/CA and flood-based messaging held up well across multiple relay points. A  range trial (Figure 17) also backed this up, showing steady packet success over long stretches thanks to hopping between nodes. 
 
-%% FIGURE 16: Range tested in the Meshtastic Simulator
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\columnwidth]{figures/fig16.png}}
+\caption{Range tested in the Meshtastic Simulator}
+\label{fig}
+\end{figure}
 
-%% FIGURE 17: Actual Range found, showing mesh algorithm success
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\columnwidth]{figures/fig17.png}}
+\caption{Actual Range found, showing mesh algorithm success}
+\label{fig}
+\end{figure}
 
 
 \section{DISCUSSION} 
@@ -216,6 +349,27 @@ The chief limitation of this work is found in its use of simulation-based verifi
 In this work, theoretical validation of the theoretical design for a low cost two-tier emergency communication system was successfully designed and validated. The concept of the design could be legalized and economically applied to India by the chosen system concept of a structure employing LoRa, mesh protocol and the license-free 433 MHz band. The simulation results showed the good theoretical performance of a home-built QFH antenna with ideal performance of S11 = -21.25 dB with hemispherical radiation patterns. The implementation of the Tier 1 Civilian Node and its corresponding core network software for the solution was also successful in demonstrating its functionality with the Meshtastic platform. 
 
 The thrust of this work is theoretical validation, the immediate priority for future work will be the transition from simulation to a physically robust prototype. This will necessitate the re-fabrication of the QFH antenna with precise assembly strategies in mind to ameliorate the fabrication issues which exist within the prototype and which caused the resonance to shift centres in the first prototype. Once this antenna design has been fabricated it can be manufactured is a practical way with its validation using a VNA for this design for its resonant frequency at 433 MHz. Once validated the potential will then be explored by way of extensive testing in real world scenarios to measure the range of the QFH equipped Base Station against the original antenna-equipped Civilian Nodes with a goal to quantify the true performance of the system. 
+
+\section{STANDARDS}
+    The system has been developed in accordance with the guidelines set out by India's Wireless Planning \& Coordination (WPC) Wing, specifically concerning the operation of radio frequency systems.
+
+    The RF system is operating within the \textbf{433} MHz License-Free ISM (Industrial, Scientific, and Medical) band.
+
+    Input Power to the RF System is limited to less than \textbf{15} dBm as per WPC guidelines, which limits the maximum allowable power level for license free transmission in this band.
+
+    The RF System and Antenna are both designed to operate at a standard \textbf{50} $\Omega$ Input Impedance to ensure that they will be able to interoperate with other devices or equipment having the same \textbf{50} $\Omega$ input impedance.
+
+    Performance characteristics of the Antenna have been evaluated using the standard S\textbf{11} (Return Loss) and VSWR (Voltage Standing Wave Ratio) metrics.
+
+    Bluetooth Low Energy (BLE) wireless protocol is used to facilitate Node-to-Phone wireless communication.
+
+    LoRa (Long Range) Modulation Layer is used as the Physical Modulation Layer to support low data rate, long range wireless communication. The use of LoRa as the Physical Modulation Layer supports the implementation of long range, low power consumption wireless networking.
+
+    CSMA/CA (Carrier Sense Multiple Access/Collision Avoidance) Protocol is used to manage channel access.
+
+    Network Logic and Packet Structure are based on an open source protocol called Meshtastic.
+
+    AES-GCM (Advanced Encryption Standard in Galois/Counter Mode) Protocol, recognized by NIST as a Standard for Authenticated Encryption, is used to secure all communications.
 
 \appendices
 \section{Lookup Tables for Compensation Factors}
@@ -314,16 +468,24 @@ Empirical compensation factors ($\Delta$L and $\Delta$F) are interpolated from s
 \end{equation}
 
 \begin{thebibliography}{00}
-\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
+\bibitem{b1}Dutta, Indrani, et al. "DisasChat: A resilient and decentralized communication system for emergency situations." 2020 IEEE Global Humanitarian Technology Conference (GHTC). IEEE, 2020.
+\bibitem{b2}Todakar, Renuka, et al. "AI-Driven, Self-Recovering Communication Network for Deep Disaster Zone." International Journal of Advanced Research in Science, Communication and Technology, 2025.
+\bibitem{b3}Schmidt, Daniel, et al. "BPoL: A Disruption-Tolerant LoRa Network for Disaster Communication." 2023 IEEE Global Humanitarian Technology Conference (GHTC). IEEE, 2023.
+\bibitem{b4}Dubey, Dr Anil, et al. "LORA Communication Model Design for Environmental Data of Natural Calamities Area." 2024 International Conference on Emerging Innovations in Engineering and Technology (EmergIN). IEEE, 2024.
+\bibitem{b5}Ariessaputra, Suthami, et al. "Helix Quadrifilar Antena Design for Long Range (LoRa) Application." 2024 IEEE Asia-Pacific Microwave Conference (APMC). IEEE, 2024.
+\bibitem{b6}Bianco, Giulio Maria, et al. "LoRa System for Search and Rescue: Path Loss Models and Procedures in Mountain Scenarios." IEEE Internet of Things Journal 8.12 (2021): 9635-9646.
+\bibitem{b7}Daramouskas, Ioannis, et al. "Performance Analysis for Time Difference of Arrival Localization in Long-Range Networks." Smart Cities 7.5 (2024): 2514-2541.
+\bibitem{b8}Ranasinghe, Vindula, et al. "Rapid and Resilient LoRa Leap: A Novel Multi-Hop Architecture for Decentralised Earthquake Early Warning Systems." Sensors 24.18 (2024): 5960.
+\bibitem{b9}Bouras, Christos, et al. "Time Difference of Arrival Localization Study for SAR Systems over LoRaWAN." Procedia Computer Science 175 (2020): 292-299.
+\bibitem{b10}Mari, Jean Martial, and Alban Gabillon. "The MauMe network-A LoRa multi-hop collaborative protocol and low-cost implementation example." Computer Standards \& Interfaces 86 (2023): 103733.
+\bibitem{b11}Douklias, Athanasios, et al. "A Field Communication System for Volunteer Urban Search and Rescue Teams Combining 802.11 ax and LoRaWAN." Applied Sciences 13.10 (2023): 6118.
+\bibitem{b12}Muladi, Muladi, et al. "LoRa Mesh-Based IoT GPS Tracking System for Mountain Climbers." International Journal of Safety and Security Engineering 14.6 (2024): 1751-1761.
+\bibitem{b13}Höcht, Jonas. "Implementation of a LoRa-based DTN for emergency communication."
+\bibitem{b14}Fusco, Vincent F., Robert Cahill, and Rong Li. "Quadrifilar loop antenna." IEEE Transactions on Antennas and Propagation 51.1 (2003): 115-120.
+\bibitem{b15}Wang, Qi, et al. "An Overview of Emergency Communication Networks." Remote Sensing 15.6 (2023): 1595.
 \end{thebibliography}
 \vspace{12pt}
-\color{red}
-IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
+% \color{red}
+% IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
 
 \end{document}
